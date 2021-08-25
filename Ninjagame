@@ -57,6 +57,7 @@
 <body>
         <div id='world'></div>
         <div id='ninjaman'></div>
+        <div id='score'></div>
 </body>
 <script type="text/javascript">
     var world = [
@@ -74,7 +75,7 @@
         3: 'onigiri'
     }
 
-    var points = 0
+    var score = 0
     function drawWorld(){
         output = "";
 
@@ -93,7 +94,6 @@
 
 
     drawWorld();
-    var score = 0
 
     document.write()
 
@@ -111,10 +111,10 @@
 
     function eating(){
         if(world[ninjaman.y][ninjaman.x] == 2){
-            score++
+            score = score + 10
         }
         else if(world[ninjaman.y][ninjaman.x] == 3){
-            score = score + 3
+            score = score + 30
         }
         return score;
     }
@@ -148,13 +148,15 @@
             }
         }  
 
-        
+        document.getElementById("score").innerHTML = 'Score: ' + score
         drawNinjaman()
         drawWorld()
         console.log(world)
-        console.log(score)
-        return score;
+        console.log(score);
+        
     }
+    
+    
 </script>
 
 </html>
