@@ -108,44 +108,52 @@
     }
     drawNinjaman()
 
-    function eating(){
-        var sushi = 10;
-        var points = 0;
-        if(world[ninjaman.y][ninjaman.x] == 2){
-            points = points + sushi;
-        }
-        world[ninjaman.y][ninjaman.x] = 0;
-        
-        return points;
-    }
 
+    function eating(){
+        if(world[ninjaman.y][ninjaman.x] == 2){
+            score++
+        }
+        else if(world[ninjaman.y][ninjaman.x] == 3){
+            score = score + 3
+        }
+        return score;
+    }
     document.onkeydown = function (e){
         if(e.keyCode == 37){
             if(world[ninjaman.y][ninjaman.x - 1] != 1){
             ninjaman.x--
+            eating()
+            world[ninjaman.y][ninjaman.x] = 0;
             }
         }
         else if(e.keyCode == 39){
             if(world[ninjaman.y][ninjaman.x + 1] != 1){
             ninjaman.x++
+            eating()
+            world[ninjaman.y][ninjaman.x] = 0;
             }
         }
         else if(e.keyCode == 40){
             if(world[ninjaman.y + 1][ninjaman.x] != 1){
             ninjaman.y++
+            eating()
+            world[ninjaman.y][ninjaman.x] = 0;
             }
         }
         else if(e.keyCode == 38){
             if(world[ninjaman.y - 1][ninjaman.x] != 1){
             ninjaman.y--
+            eating()
+            world[ninjaman.y][ninjaman.x] = 0;
             }
         }  
 
-        eating()
+        
         drawNinjaman()
         drawWorld()
         console.log(world)
-        console.log(points)
+        console.log(score)
+        return score;
     }
 </script>
 
