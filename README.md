@@ -1,7 +1,5 @@
 Welcome to my page, I'm Andrew DeWitt.
-I'm a student of Coding Dojo interested in creating applications or programs related to cryptocurrency and market platforms
-
-I'm learning from the ground up in both realms. History and patterns are my best teachers moving forward.
+I'm an Alumni of Coding Dojo having learned the MERN, Python, and Java stacks
 
 I'd love to collaborate, my email is DeWittDev@protonmail.ch.
 Feel free to reach out at any time.
